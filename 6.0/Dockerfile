@@ -1,6 +1,9 @@
 FROM nvidia/digits:6.0
 LABEL maintainer "AI4SIG"
 
+# Correct DIGITS version
+COPY version.py /usr/local/lib/python2.7/dist-packages/digits/
+
 # Modify Caffe LeNet, AlexNet and GoogLeNet
 COPY standard-networks/caffe/* /usr/local/lib/python2.7/dist-packages/digits/standard-networks/caffe/
 
