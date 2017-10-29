@@ -1,9 +1,6 @@
 FROM nvidia/digits:6.0
 LABEL maintainer "AI4SIG"
 
-# Correct Model Store URL
-COPY config/store_option.py /usr/local/lib/python2.7/dist-packages/digits/config/
-
 # Modify Caffe LeNet, AlexNet and GoogLeNet
 COPY standard-networks/caffe/* /usr/local/lib/python2.7/dist-packages/digits/standard-networks/caffe/
 
@@ -18,12 +15,12 @@ COPY download_data/* /usr/local/lib/python2.7/dist-packages/digits/download_data
 
 # Install all plugins
 WORKDIR /tmp/
-ADD DIGITS-6.0.0-plugins.tar.gz .
-RUN pip install -e /tmp/DIGITS-6.0.0/plugins/data/bAbI/ && \
-    pip install -e /tmp/DIGITS-6.0.0/plugins/data/gan/ && \
-    pip install -e /tmp/DIGITS-6.0.0/plugins/data/imageGradients/ && \
-    pip install -e /tmp/DIGITS-6.0.0/plugins/data/sunnybrook/ && \
-    pip install -e /tmp/DIGITS-6.0.0/plugins/data/textClassification/ && \
-    pip install -e /tmp/DIGITS-6.0.0/plugins/view/gan/ && \
-    pip install -e /tmp/DIGITS-6.0.0/plugins/view/imageGradients/ && \
-    pip install -e /tmp/DIGITS-6.0.0/plugins/view/textClassification/
+ADD DIGITS-6.0.1-plugins.tar.gz .
+RUN pip install -e /tmp/DIGITS-6.0.1/plugins/data/bAbI/ && \
+    pip install -e /tmp/DIGITS-6.0.1/plugins/data/gan/ && \
+    pip install -e /tmp/DIGITS-6.0.1/plugins/data/imageGradients/ && \
+    pip install -e /tmp/DIGITS-6.0.1/plugins/data/sunnybrook/ && \
+    pip install -e /tmp/DIGITS-6.0.1/plugins/data/textClassification/ && \
+    pip install -e /tmp/DIGITS-6.0.1/plugins/view/gan/ && \
+    pip install -e /tmp/DIGITS-6.0.1/plugins/view/imageGradients/ && \
+    pip install -e /tmp/DIGITS-6.0.1/plugins/view/textClassification/
