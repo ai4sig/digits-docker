@@ -9,6 +9,5 @@
 - Modify Torch LeNet
 
 # Link
-
 - Get and Run Modified DIGITS Docker (https://ai4sig.org/docs/get-modified-digits-docker/)
 - Docker Hub (https://hub.docker.com/r/ai4sig/digits/)
